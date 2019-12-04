@@ -19,6 +19,9 @@
 
 #### 用法
 
+
+- xml配置
+
 ```
     <com.okay.library.PullToRefresh
         android:id="@+id/pullLayout"
@@ -32,5 +35,21 @@
             android:layout_height="match_parent" />
 
     </com.okay.library.PullToRefresh>
+```
+- 设置监听
+```
+        pullLayout.setOnRefreshListener(object : RefreshListener {
+            override fun onRefresh() {
+                Log.d("MainActivity", "onRefresh")
+                mockNet()
+            }
+        })
+```
+
+- 替换刷新头
+
+```
+        headView = HeadView(this)
+        pullLayout.addHeadView(headView!!)
 ```
 
