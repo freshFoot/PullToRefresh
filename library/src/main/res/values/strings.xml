@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Library</string>
+    <string name="lib_ptr_up_load">下拉加载</string>
+    <string name="lib_ptr_release_load">松开加载</string>
+    <string name="lib_ptr_loading">正在加载</string>
+    <string name="lib_ptr_load_done">加载完成</string>
+</resources>
