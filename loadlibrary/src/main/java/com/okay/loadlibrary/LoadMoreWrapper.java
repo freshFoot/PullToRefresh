@@ -25,6 +25,11 @@ public class LoadMoreWrapper {
         return this;
     }
 
+    /**
+     * 设置加载中的view
+     * @param footerView
+     * @return
+     */
     public LoadMoreWrapper setFooterView(View footerView) {
         mLoadMoreAdapter.setFooterView(footerView);
         return this;

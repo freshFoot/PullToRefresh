@@ -1,17 +1,5 @@
 <resources>
 
-    <declare-styleable name="EndLine">
-        <attr name="line_direction" format="integer" >
-            <enum name="vertical" value="1"/>
-            <enum name="horizontal" value="2"/>
-        </attr>
-    </declare-styleable>
-
-    <style name="DefaultEndLine">
-        <item name="line_direction">1</item>
-    </style>
-
-
     <declare-styleable name="LoadingView">
         <attr name="petalCount" format="integer"/>
         <attr name="petalLength" format="dimension"/>
@@ -19,5 +7,13 @@
         <attr name="startColor" format="color"/>
         <attr name="endColor" format="color"/>
     </declare-styleable>
+
+    <style name="DefaultLoadingView">
+        <item name="petalCount">10</item>
+        <item name="petalLength">3dp</item>
+        <item name="petalWidth">5dp</item>
+        <item name="startColor">@color/lib_ptr_color_FF888888</item>
+        <item name="endColor">@color/lib_ptr_color_FFFFFF</item>
+    </style>
 
 </resources>

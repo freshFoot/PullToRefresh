@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         recycleView.layoutManager = LinearLayoutManager(this)
         recycleView.adapter = myAdapter
-        val loadMoreAdapter = LoadMoreWrapper.with(myAdapter).setShowNoMoreEnabled(true).setListener {
+        val loadMoreAdapter = LoadMoreWrapper.with(myAdapter).setFooterView(R.layout.demo_loading).setShowNoMoreEnabled(true).setListener {
             val itemCount = myAdapter.itemCount
             //not enable load more
             if (itemCount >= 40) {

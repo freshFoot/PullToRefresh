@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="lib_ptr_color_99FFFFFF">#99FFFFFF</color>
+
+    <color name="lib_ptr_color_E6FFFFFF">#E6FFFFFF</color>
+
+    <color name="lib_ptr_color_B3FFFFFF">#B3FFFFFF</color>
+
+    <color name="lib_ptr_color_FFFFFF">#FFFFFF</color>
+
+    <color name="lib_ptr_color_FF888888">#FF888888</color>
+    
+    <color name="lib_ptr_color_FF0099FF">#FF0099FF</color>
+
+</resources>
