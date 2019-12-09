@@ -17,36 +17,28 @@ class MainActivity : AppCompatActivity() {
 
     var headView:HeadView? = null
 
-    // use for demo, please ignore
-    private var mShowLoadFailedEnabled = true
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         recycleView.layoutManager = LinearLayoutManager(this)
         recycleView.adapter = myAdapter
-        LoadMoreWrapper.with(myAdapter).setShowNoMoreEnabled(true).setListener {
+        val loadMoreAdapter = LoadMoreWrapper.with(myAdapter).setShowNoMoreEnabled(true).setListener {
             val itemCount = myAdapter.itemCount
-            if (itemCount >= 20 && mShowLoadFailedEnabled) {
-                mShowLoadFailedEnabled = false
-                recycleView.postDelayed(Runnable { it.setLoadFailed(true) }, 800)
-            } else {
-                //not enable load more
-                if (itemCount >= 40) {
-                    it.loadMoreEnabled = false
-                }
-
-                recycleView.postDelayed(Runnable {
-                    list.addAll(Data.getList().subList(20, 40))
-                    myAdapter.update(list)
-                }, 1200)
+            //not enable load more
+            if (itemCount >= 40) {
+                it.loadMoreEnabled = false
             }
+            recycleView.postDelayed(Runnable {
+                list.addAll(Data.getList().subList(20, 40))
+                myAdapter.update(list)
+            }, 1200)
         }.into(recycleView)
 //        headView = HeadView(this)
 //        pullLayout.addHeadView(headView!!)
         pullLayout.setOnRefreshListener(object : RefreshListener {
             override fun onRefresh() {
                 Log.d("MainActivity", "onRefresh")
+                loadMoreAdapter.loadMoreEnabled = true
                 mockNet()
             }
         })
